@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#351018">
+  <title>InstaSave — Instagram Media Tools</title>
+  <meta name="description" content="A simple media utility for content you own or have permission to download.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#"><span class="brand-mark">I</span> InstaSave<span class="dot">.</span></a><span class="top-note">MEDIA TOOLS · SIMPLE & PRIVATE</span></header>
+<main>
+  <section class="hero">
+    <div class="eyebrow"><span></span> YOUR MEDIA, YOUR FORMAT</div>
+    <h1>Save what matters.<br><em>Keep it simple.</em></h1>
+    <p class="intro">Download supported public Instagram media you own or have permission to use, or turn your images into a neat PDF.</p>
+    <div class="panel">
+      <div class="tabs"><button class="tab active" data-tab="download">Instagram downloader</button><button class="tab" data-tab="pdf">Images to PDF</button></div>
+      <section id="download-panel" class="tab-panel">
+        <label for="ig-url">Instagram post or Reel link</label>
+        <div class="url-row"><input id="ig-url" type="url" placeholder="https://www.instagram.com/p/..." autocomplete="url"><button id="download-btn" class="primary">Fetch media <span>→</span></button></div>
+        <p class="hint">Public links only. Private posts, login-protected content and stories are not supported.</p>
+        <div id="download-status" class="status" role="status" aria-live="polite"></div>
+      </section>
+      <section id="pdf-panel" class="tab-panel hidden">
+        <label for="image-files">Choose one or more image files</label>
+        <div class="upload-box"><input id="image-files" type="file" accept="image/*" multiple><p>Drop images here or <strong>browse files</strong></p><small>JPG, PNG and WebP · Files are processed in your browser</small></div>
+        <div id="file-list" class="file-list"></div>
+        <button id="make-pdf" class="primary full" disabled>Convert images to PDF <span>→</span></button>
+        <div id="pdf-status" class="status" role="status" aria-live="polite"></div>
+      </section>
+    </div>
+    <div class="trust-row"><span>✓ No account on this website</span><span>✓ PDF made on your device</span><span>✓ No media archive</span></div>
+  </section>
+  <section class="features">
+    <article><div class="feature-icon">▧</div><h3>Image & video</h3><p>Fetch supported media from a public post or Reel link.</p></article>
+    <article><div class="feature-icon">▤</div><h3>Carousel support</h3><p>Download multiple supported items together as a ZIP.</p></article>
+    <article><div class="feature-icon">▣</div><h3>Image to PDF</h3><p>Combine selected images into one downloadable PDF.</p></article>
+  </section>
+  <aside class="notice"><strong>Please use responsibly.</strong> Only download content you created or are authorized to save. Respect creators’ rights and Instagram’s terms. This tool does not access private accounts or bypass login restrictions.</aside>
+</main>
+<footer><span>© <span id="year"></span> InstaSave</span><span>Independent utility · Not affiliated with Instagram or Meta</span></footer>
+<script src="app.js"></script>
+</body></html>
